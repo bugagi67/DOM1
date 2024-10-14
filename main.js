@@ -3795,28 +3795,6 @@ if (!IS_PURE && DESCRIPTORS && values.name !== 'values') try {
 
 /***/ }),
 
-/***/ 2062:
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-
-var $ = __webpack_require__(6518);
-var $map = (__webpack_require__(9213).map);
-var arrayMethodHasSpeciesSupport = __webpack_require__(597);
-
-var HAS_SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('map');
-
-// `Array.prototype.map` method
-// https://tc39.es/ecma262/#sec-array.prototype.map
-// with adding support of @@species
-$({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
-  map: function map(callbackfn /* , thisArg */) {
-    return $map(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
-  }
-});
-
-
-/***/ }),
-
 /***/ 4782:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -4903,8 +4881,6 @@ var es_array_from = __webpack_require__(3418);
 var es_array_is_array = __webpack_require__(4346);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.iterator.js
 var es_array_iterator = __webpack_require__(3792);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.map.js
-var es_array_map = __webpack_require__(2062);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.slice.js
 var es_array_slice = __webpack_require__(4782);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.sort.js
@@ -4953,38 +4929,29 @@ var data = [{
   year: 1994
 }];
 ;// ./src/js/app.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
 function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-console.log(data.map(function (item) {
-  return {
-    idType: _typeof(item.id),
-    imdbType: _typeof(item.imdb),
-    yearType: _typeof(item.year)
-  };
-}));
 function main() {
   var container = document.querySelector(".container");
   function showTable(data) {
