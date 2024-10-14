@@ -1,11 +1,4 @@
 import { data } from "../data";
-console.log(
-  data.map((item) => ({
-    idType: typeof item.id,
-    imdbType: typeof item.imdb,
-    yearType: typeof item.year,
-  })),
-);
 
 export function main() {
   const container = document.querySelector(".container");
